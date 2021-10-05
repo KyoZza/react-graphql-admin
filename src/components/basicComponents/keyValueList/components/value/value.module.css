@@ -1,0 +1,15 @@
+.container {
+  text-align: right;
+  overflow: hidden;
+  overflow-wrap: break-word;
+}
+
+.container.main {
+  color: var(--main-color);
+  font-weight: 500;
+}
+
+.container > a {
+  /* margin-top: var(--spacing-medium); */
+  font-size: var(--font-size);
+}

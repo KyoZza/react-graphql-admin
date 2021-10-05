@@ -1,0 +1,22 @@
+.container {
+  max-width: 100%;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title svg {
+  color: var(--error-color);
+  margin-left: var(--spacing-small);
+  font-size: 36px;
+}
+
+
+@media (min-width: 400px) {
+  .container {
+    max-width: var(--width-small);
+  }
+}

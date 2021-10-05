@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-top: var(--spacing-small);
+}
+
+/* @media (min-width: 960px) {
+  .container {
+    justify-content: flex-start;
+  }
+} */

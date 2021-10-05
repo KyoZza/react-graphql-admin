@@ -1,0 +1,25 @@
+.wrapper, .wrapperTight {
+  display: flex;
+  min-width: max-content;
+}
+
+.wrapper > *:last-child, .wrapperTight > *:last-child {
+  margin-right: 0  !important;
+}
+
+.wrapper > button, .wrapper > a {
+  margin-right: var(--spacing-medium) !important;
+}
+
+.wrapperTight > button, .wrapperTight > a {
+  margin-right: var(--spacing-small) !important;
+}
+
+/* spacing for wrapped elements */
+h1 .wrapper, h1 .wrapperTight {
+  margin-top: calc(0px - var(--spacing-tiny));
+}
+h1 .wrapper > button, h1 .wrapper > a,
+h1 .wrapperTight > button, h1 .wrapperTight > a {
+  margin-top: var(--spacing-tiny);
+}

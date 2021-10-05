@@ -1,0 +1,31 @@
+.button {
+  display: inline-block;
+  min-width: max-content;
+  font-weight: 500;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: #0000;
+  color: var(--font-color);
+  border: solid 1px var(--font-color);
+  border-style: solid;
+  margin-top: 0;
+  text-decoration: none;
+  padding: 3px var(--spacing-small);
+}
+
+.button:disabled { opacity: 0.6; }
+
+.button:hover {
+  background-color: var(--hover-color);
+  color: var(--font-color);
+}
+
+
+.button.danger {
+  border-color: var(--error-color);
+  color: var(--error-color);
+}
+
+.button.danger:hover {
+  background-color: var(--error-color-hover-sec);
+}

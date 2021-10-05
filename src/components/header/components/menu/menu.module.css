@@ -1,0 +1,28 @@
+.iconButton {
+  cursor: pointer;
+  font-size: var(--title-size-medium);
+  display: flex;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: #0000;
+  color: var(--font-color);
+}
+
+.iconButton:hover {
+  color: var(--main-color);
+}
+
+
+
+@media (min-width: 400px) {
+  .iconButton {
+    font-size: var(--title-size-big);
+  }
+}
+
+@media (min-width: 960px) {
+  .iconButton {
+    display: none;
+  }
+}

@@ -1,0 +1,13 @@
+.container {
+  max-width: 330px;
+  width: 100%;
+  padding: var(--spacing-medium);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color);
+  box-shadow: var(--overlay-box-shadow);
+  z-index: var(--overlay-z-index);
+}
+
+.container > h3 {
+  margin-top: 0;
+}

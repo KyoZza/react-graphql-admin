@@ -1,0 +1,1 @@
+export { UPDATE_PASSWORD } from './updatePassword' 

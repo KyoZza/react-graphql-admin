@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: var(--font-size-big);
+  font-weight: 500;
+  margin-bottom: var(--spacing-small);
+}
+
+.container:hover, .active {
+  color: var(--main-color) !important;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--font-color);
+  font-size: inherit;
+}
+
+.button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: #0000;
+  color: var(--font-color); 
+  font: inherit;
+  cursor: pointer;
+  width: 100%;
+  block-size: auto;
+  display: inline-block;
+}
+
+.container svg {
+  margin-right: var(--spacing-small);
+}

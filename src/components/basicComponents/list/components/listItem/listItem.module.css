@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: var(--spacing-small) 0;
+}
+
+.container button {
+  margin: 0;
+}

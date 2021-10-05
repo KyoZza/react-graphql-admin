@@ -1,0 +1,1 @@
+export { GET_ALERT_MESSAGES } from './getAlertMessages';

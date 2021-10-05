@@ -1,0 +1,30 @@
+.overflowWrapper {
+  margin-top: var(--spacing-medium);
+  overflow-x: auto;
+  width: 100%;
+}
+
+.container {
+  /* table-layout: fixed; */
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+.head {
+  font-weight: 500;
+  border-bottom: 2px solid var(--border-color);
+  text-align: left;
+}
+
+.body {
+  font-size: var(--font-size-small);
+}
+
+
+@media (min-width: 960px) {
+  .container {
+    width: 100%;
+    overflow-x: unset;
+  }
+}

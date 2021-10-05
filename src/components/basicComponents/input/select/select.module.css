@@ -1,0 +1,31 @@
+.container {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('./down-arrow-lightmode.svg');
+	background-repeat: no-repeat, repeat;
+	background-position: right var(--spacing-small) top calc(50% + 2px), 0 0;
+  background-size: var(--font-size-small) auto, 100%;
+  /* text-indent: 0px; */
+
+  padding-right: calc(var(--spacing-big) + 4px) !important;
+}
+
+/* For the workaround to create a placeholder for <select>  */
+.container:required:invalid, 
+.container:not(:valid), 
+.container > option:disabled,
+.container.placeholder { 
+  color: var(--disabled-font-color) !important; 
+}
+  
+.container::-ms-expand {
+  display: none;
+} 
+
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-image: url('./down-arrow-darkmode.svg');
+  }
+}

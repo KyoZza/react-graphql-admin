@@ -1,0 +1,8 @@
+.container.body:hover {
+  background-color: var(--hover-color);
+}
+
+
+.container.body:last-child > td {
+  border-bottom: none;
+}

@@ -1,0 +1,276 @@
+/* App variables */
+:root {
+  --width-small:      400px;
+  --width-wide-modal: 640px;
+  --width-medium:     960px;
+  --width-large:      1200px;
+
+  --spacing-tiny:   8px;
+  --spacing-small:  16px;
+  --spacing-medium: 24px;
+  --spacing-big:    32px;
+
+  --border-radius:  10px;
+  --checkbox-size:  22px;
+  --alert-width:    300px;
+
+  --main-font-family: 'M PLUS 1p', sans-serif;
+
+  --annotation-size:   12px;
+  --font-size-small:   14px;
+  --font-size:         16px;
+  --font-size-big:     18px;
+  --title-size-small:  20px;
+  --title-size-medium: 24px;
+  --title-size-big:    30px;
+
+  --background-color:     #FFF;
+  --background-sec-color: #EEE;
+  --input-bg-color:       #FFF;
+
+  --main-color:           #C2185B;
+  --main-color-hover:     #D81B60;
+  --color-cyan:           #5BDAC199;
+  --font-color:           #474747;
+  --link-color:           #189DC2;
+  --link-color-hover:     #25BAEA;
+  --annotation-color:     #A0A0A0;
+  --hover-color:          #F4F4F4;
+  --error-color:          #C62828;
+  --error-color-hover:    #D32F2F;
+  --error-color-hover-sec:#C6282822; /* Error color with opacity */
+  --success-color:        #77dd58;
+  --border-color:         #E1E1E1;
+  --disabled-color:       rgba(200,200,200,0.3);
+  --disabled-font-color:  rgba(160,160,160,0.8);
+
+  --box-shadow: 0 2px 4px 0 rgba(0,0,0,0.18);
+  --overlay-box-shadow: 
+    0px 8px 10px -5px rgba(0,0,0,0.2), 
+    0px 16px 24px 2px rgba(0,0,0,0.14),
+    0px 6px 30px 5px rgba(0,0,0,0.12);
+  --overlay-z-index: 100;
+  --drawer-transition: 0.5s ease-out;
+}
+
+/* Dark mode colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --background-color: #1C1D1E; */
+    --background-color: #1E1F23;
+    --background-sec-color: #232425;
+    --input-bg-color:   #232428;
+
+    --hover-color: #2A2B2E;
+    --font-color: #C4C5C9;
+    --annotation-color: #6C6D71;
+    /* --text-lighter: #8E8F93; */
+    --border-color: #4E4F53;
+    --overlay-box-shadow: 
+      0px 8px 10px -5px rgba(0,0,0,0.8),
+      0px 16px 24px 2px rgba(0,0,0,0.56),
+      0px 6px 30px 5px rgba(0,0,0,0.48);
+  }
+}
+
+/* Global styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--main-font-family);
+  font-size: var(--font-size);
+  color: var(--font-color);
+  background-color: var(--background-color);
+}
+
+html {
+  /* Safari for iOS requires overflow hidden and position fixed
+     instead of just overflow-x hidden
+    */
+  overflow: hidden;
+  position: fixed;
+}
+
+html, body, #root, .App {
+  height: 100%;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-y: auto;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: var(--title-size-big);
+  margin-bottom: var(--spacing-big);
+  letter-spacing: 1.4px;
+
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+h2 {
+  margin: var(--spacing-medium) 0;
+  font-size: var(--title-size-medium);
+  letter-spacing: 0.8px;
+}
+
+h3 {
+  margin: var(--spacing-medium) 0;
+  font-size: var(--title-size-small);
+  letter-spacing: 0.6px;
+}
+
+
+/*  General Spacing rules */
+label, input, select, textarea, p {
+  margin: var(--spacing-medium) 0 0 0;
+}
+
+hr {
+  margin: var(--spacing-small) 0;
+  border: 1px solid var(--border-color);
+}
+
+/* Spacing rules (input fields after a label)*/
+label + input, label + select, label + textarea {
+  margin-top: var(--spacing-small);
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--link-color-hover);
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  font-size: var(--font-size-small);
+}
+
+input, select, textarea {
+  font-family: var(--main-font-family);
+  font-size: var(--font-size-small);
+  color: var(--font-color);
+  background-color: var(--input-bg-color);
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-tiny) var(--spacing-small);
+  vertical-align: middle;
+
+  /* For Firefox issue with flexbox elements */
+  min-width: 0;
+}
+
+/* Change Chrome's autofill styling */
+input:-webkit-autofill
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-internal-autofill-selected,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-internal-autofill-selected  
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-internal-autofill-selected {
+  -webkit-box-shadow: 0 0 0px 1000px var(--input-bg-color) inset;
+  -webkit-text-fill-color: var(--font-color);
+  color: var(--font-color) !important;
+}
+
+input, select  {
+  height: 40px;
+}
+
+input[type='date'], input[type='search'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+textarea { 
+  width: 100%;
+  min-height: 42px;
+  resize: vertical;
+  padding: var(--spacing-tiny) var(--spacing-small);
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  background-color: var(--disabled-color);
+  color: var(--disabled-font-color);
+}
+
+input::placeholder, select::placeholder, textarea::placeholder
+/* input:-ms-input-placeholder, select:-ms-input-placeholder, textarea:-ms-input-placeholder, 
+input::-webkit-input-placeholder, select::-webkit-input-placeholder, textarea::-webkit-input-placeholder, 
+input::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder */
+{
+  color: var(--disabled-font-color);
+  opacity: 1;
+}
+
+button > svg, button > div {
+  display: flex !important;
+}
+
+
+/* Scrollbar */
+.App {
+  scrollbar-width: none;
+}
+
+div {
+  scrollbar-color: var(--main-color) var(--border-color);
+  scrollbar-width: thin;
+}
+
+div::-webkit-scrollbar {
+  height: 7.5px;
+  width: 0px;
+}
+
+div::-webkit-scrollbar-track {
+  background: var(--border-color);
+}
+
+div::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+}
+
+div::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color-hover);
+}
+
+@media (min-width: 960px) {
+  .App {
+    scrollbar-width: thin;
+  }
+
+  div::-webkit-scrollbar {
+    width: 7.5px;
+  }
+}

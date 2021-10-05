@@ -1,0 +1,25 @@
+.item {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: var(--annotation-color);
+  font-weight: 500;
+  border-bottom: 1px solid #0000;
+}
+
+.item:hover, .item.active {
+  color: var(--main-color);
+  border-bottom-color: var(--main-color);
+}
+
+@media (min-width: 960px) {
+  .item {
+    font-size: var(--font-size);
+    padding: 0 var(--spacing-medium) var(--spacing-tiny);
+    border-bottom-width: 2px;
+  }
+
+  .item:hover, .item.active {
+    border-bottom-color: var(--main-color);
+  }
+}

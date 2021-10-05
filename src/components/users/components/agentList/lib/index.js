@@ -1,0 +1,1 @@
+export { GET_AGENTS } from './getAgents';

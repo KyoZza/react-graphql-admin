@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-sec-color);
+  width: 100%;
+  padding: var(--spacing-medium);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  color: var(--font-color);
+  font-weight: normal;
+}
+
+.container.hoverable {
+  cursor: pointer;
+  
+  transition: transform 0.3s ease;
+}
+
+.container.hoverable:hover {
+  background-color: var(--hover-color);
+  transform: rotateZ(-2deg);
+}
+
+.container > label:first-child {
+  margin-top: 0;
+}
+
+.container label {
+  display: flex;
+  align-items: center;
+}
+
+.container label > svg {
+  font-size: 18px;
+  margin-right: var(--spacing-tiny);
+}

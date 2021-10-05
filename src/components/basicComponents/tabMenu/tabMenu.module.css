@@ -1,0 +1,10 @@
+.container {
+  width: 100%;
+  display: grid;
+}
+
+@media (min-width: 960px) {
+  .container {
+    width: max-content;
+  }
+}

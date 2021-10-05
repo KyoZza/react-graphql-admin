@@ -1,0 +1,10 @@
+.container {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* @media (min-width: 400px) {
+  .container {
+    max-width: var(--width-small);
+  }
+} */

@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-medium);
+  border-top: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.container .navigation, .container .copyright {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.container .navigation .navItem {
+  margin-bottom: var(--spacing-small);
+}
+
+.container .navigation .navItem {
+  text-decoration: none;
+  color: var(--font-color); 
+}
+
+.container .navigation .navItem:hover {
+  color: var(--main-color);
+}
+
+.container .copyright {
+  color: var(--annotation-color);
+  font-size: var(--annotation-size);
+  margin: 0;
+}

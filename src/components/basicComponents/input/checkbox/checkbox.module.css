@@ -1,0 +1,98 @@
+label + .container {
+  margin-top: var(--spacing-small);
+} 
+
+.container {
+  position: relative;
+  margin-top: var(--spacing-medium);
+}
+
+
+.label {
+  height: calc(var(--checkbox-size) + 2px);
+  line-height: calc(var(--checkbox-size) + 2px);
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+
+  /* 16px width of fake checkbox + 6px distance between fake checkbox and text */
+  padding-left: 40px;
+  font-weight: normal;
+  font-size: var(--font-size-small);
+}
+
+
+.label::before, .label::after {
+  position: absolute;
+  content: "";
+  
+  /* Needed for the line-height to take effect */
+  display: inline-block;
+}
+
+/* Outer box of the fake checkbox  */
+.label::before{
+  height: var(--checkbox-size);
+  width: var(--checkbox-size);  
+  border: 1px solid var(--border-color);	
+  border-radius: 4px;
+  left: 0px;
+  background-color: var(--input-bg-color);
+  cursor: pointer;
+}
+
+.input:disabled + .label::before{
+  cursor: unset;
+}
+
+/* Checkmark of the fake checkbox */
+.label::after {
+  height: 5px;
+  width: 13px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(-45deg);
+  left: 5px;
+  top: 8px;
+}
+
+
+
+.input {
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  
+  /* width and height is set to 1px to still be able to see the standard validation message */
+  max-width: 1px;
+  max-height: 1px;
+  
+  /* position of the validation message */
+  position: absolute;
+  top: 31px;
+  left: 15px;
+}
+td .input {
+  top: 12px;
+}
+
+/* Hide the checkmark by default */
+.input + .label::after {
+  content: none;
+}
+
+/* Unhide on the checked state */
+.input:checked + .label::after  {
+  content: "";
+  color: #FFF;
+}
+.input:checked + .label::before  {
+  background-color: var(--main-color);
+  border-color: var(--main-color); 
+}
+
+/* Adding focus styles on the outer-box of the fake checkbox */
+.input:focus + .label::before {
+  outline: rgb(59, 153, 252) auto 1px;
+}

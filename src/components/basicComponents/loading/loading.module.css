@@ -1,0 +1,57 @@
+
+.loading {
+  box-sizing: border-box;
+  width: 72px;
+  height: 72px;
+  border-radius: 100%;
+  border: 8px solid var(--border-color);
+  border-top-color: var(--main-color);
+  animation: spin 1s infinite linear;
+}
+
+/* Styles for laoding animation as overlay (Covering the whole screen) */
+.loading.overlay {
+  animation: spin 0.75s infinite linear;
+}
+
+
+/* Styles for laoding within a tile */
+.loading.tile {
+  width: 56px;
+  height: 56px;
+  border-width: 6px;
+  animation: spin 0.85s infinite linear;
+}
+
+/* Styles for laoding animation within a button */
+.loading.button, .loading.buttonMain {
+  width: 26px;
+  height: 26px;
+  border-width: 3px;
+  border-style:  solid;
+}
+
+.loading.button, .loading.tile {
+  border-color: rgba(28,28,28,0.2);
+  border-top-color: rgba(28,28,28,0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+  .loading.button, .loading.tile {
+    border-color: rgba(255,255,255,0.6);
+    border-top-color: rgba(255,255,255,0.9);
+  }
+}
+
+.loading.buttonMain {
+  border-color: rgba(255,255,255,0.4);
+  border-top-color: rgba(255,255,255,0.7);
+}
+
+
+
+@keyframes spin { 
+  100% { 
+    transform: rotate(360deg); 
+  } 
+} 
